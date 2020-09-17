@@ -1,14 +1,19 @@
 #include "stm32f10x.h"
 
+void setup_SPI(){
+  //Turn on the RCC clocks GPIO and SPI
+  RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+  RCC->APB2ENR |= RCC_APB2ENR_SPI1EN;
+
+  //SET GPIO PINS TO ALTERNATE FUNCION (PA5,PA6,PA7)
+  
+
+}
+
 int main(void) {
 
-    RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
-    GPIOC->CRH |= GPIO_CRH_MODE13;
-    GPIOC->CRH &= ~GPIO_CRH_CNF13;
-  
+
   while(1){
-      for(int i = 0; i<5000000; i++){}
-      GPIOC->ODR ^= GPIO_ODR_ODR13;
 
   }
 }
